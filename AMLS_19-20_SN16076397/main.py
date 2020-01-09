@@ -1,10 +1,14 @@
-import ...
+# imports
 
 # ======================================================================================================================
 # Data preprocessing
 data_train, data_val, data_test = data_preprocessing(args...)
+
+
+
 # ======================================================================================================================
 # Task A1
+
 model_A1 = A1(args...)                 # Build model object.
 acc_A1_train = model_A1.train(args...) # Train model based on the training set (you should fine-tune your model based on validation set.)
 acc_A1_test = model_A1.test(args...)   # Test model based on the test set.
