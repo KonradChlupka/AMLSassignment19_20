@@ -10,7 +10,12 @@ predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 
 
 def shape_to_np(shape):
-    """TODO: docu
+    """Converts shape returned by dlib into numpy array.
+
+    Args:
+        shape (dlib.full_object_detection): Object returned by dlib.
+    Returns:
+        np.ndarray: Coordinates of the landmarks.
     """
     # initialize the list of (x, y)-coordinates
     coords = np.zeros((shape.num_parts, 2), dtype="int")
@@ -25,21 +30,22 @@ def shape_to_np(shape):
 
 
 def rect_to_bb(rect):
-    # take a bounding predicted by dlib and convert it
-    # to the format (x, y, w, h) as we would normally do
-    # with OpenCV
+    """Converts bounding predicted by dlib into (x, y, w, h) format.
+    """
     x = rect.left()
     y = rect.top()
     w = rect.right() - x
     h = rect.bottom() - y
 
-    # return a tuple of (x, y, w, h)
     return (x, y, w, h)
 
 
 def run_dlib_shape(image):
-    # in this function we load the image, detect the landmarks of the face, and then return the image and the landmarks
-    # load the input image, resize it, and convert it to grayscale
+    """Detects landmarks.
+
+    The function detects the landmarks of the face, then returns the
+    landmarks and resized image.
+    """
     resized_image = image.astype("uint8")
 
     gray = cv2.cvtColor(resized_image, cv2.COLOR_BGR2GRAY)
