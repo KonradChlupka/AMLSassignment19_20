@@ -5,12 +5,6 @@ import dlib
 import numpy as np
 from keras.preprocessing import image
 
-# PATH TO ALL IMAGES
-global basedir, image_paths, target_size
-basedir = "./dataset"
-images_dir = os.path.join(basedir, "celeba")
-labels_filename = "labels.csv"
-
 detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 
@@ -93,7 +87,8 @@ def run_dlib_shape(image):
     return dlibout, resized_image
 
 
-def extract_features_labels():
+def extract_features_labels(images_dir):
+    # TODO: docu
     """
     This funtion extracts the landmarks features for all images in the folder 'dataset/celeba'.
     It also extracts the gender label for each image.
@@ -102,9 +97,12 @@ def extract_features_labels():
         gender_labels:      an array containing the gender label (male=0 and female=1) for each image in
                             which a face was detected
     """
+    basedir = "./Datasets"
+    labels_filename = "labels.csv"
+    images_dir = os.path.join(basedir, images_dir)
     image_paths = [os.path.join(images_dir, l) for l in os.listdir(images_dir)]
     target_size = None
-    labels_file = open(os.path.join(basedir, labels_filename), "r")
+    labels_file = open(os.path.join(images_dir, labels_filename), "r")
     lines = labels_file.readlines()
     gender_labels = {line.split(",")[0]: int(line.split(",")[6]) for line in lines[2:]}
     if os.path.isdir(images_dir):
