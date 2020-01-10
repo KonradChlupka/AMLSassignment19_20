@@ -97,22 +97,22 @@ def extract_features_labels(images_dirname):
     image_paths = [os.path.join(images_dir, l) for l in os.listdir(images_dir)]
 
     # get labels, convert into dict, change -1 to 0
-    if "celeba" in images_dirname:
-        labels_file = open(
-            os.path.join("./Datasets", images_dirname, "labels.csv"), "r"
-        )
-        lines = labels_file.readlines()
-        labels_file.close()
-        all_labels = {}
-        for line in lines[1:]:
-            line = line.split()
+    labels_file = open(os.path.join("./Datasets", images_dirname, "labels.csv"), "r")
+    lines = labels_file.readlines()
+    labels_file.close()
+    all_labels = {}
+    for line in lines[1:]:
+        line = line.split()
+        if "celeba" in images_dirname:
             all_labels[int(line[0])] = [
                 line[1],
                 (int(line[2]) + 1) // 2,
                 (int(line[3]) + 1) // 2,
             ]
-    else:
-        raise (NotImplementedError)
+        if "cartoon_set" in images_dirname:
+            all_labels[int(line[0])] = [int(line[1]), int(line[2]), line[3]]
+        else:
+            raise (NotImplementedError)
 
     if os.path.isdir(images_dir):
         all_features = []
