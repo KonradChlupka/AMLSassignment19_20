@@ -109,7 +109,7 @@ def extract_features_labels(images_dirname):
                 (int(line[2]) + 1) // 2,
                 (int(line[3]) + 1) // 2,
             ]
-        if "cartoon_set" in images_dirname:
+        elif "cartoon_set" in images_dirname:
             all_labels[int(line[0])] = [int(line[1]), int(line[2]), line[3]]
         else:
             raise (NotImplementedError)
