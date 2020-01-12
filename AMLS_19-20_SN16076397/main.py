@@ -23,6 +23,7 @@ del model_A1
 model_A2 = A2()
 acc_A2_train = model_A2.train()
 acc_A2_test = model_A2.test()
+del model_A2
 
 
 # ======================================================================================
@@ -31,6 +32,7 @@ acc_A2_test = model_A2.test()
 model_B1 = B1()
 acc_B1_train = model_B1.train()
 acc_B1_test = model_B1.test()
+del model_B1
 
 
 # ======================================================================================
@@ -39,6 +41,7 @@ acc_B1_test = model_B1.test()
 model_B2 = B2()
 acc_B2_train = model_B2.train()
 acc_B2_test = model_B2.test()
+del model_B2
 
 
 # ======================================================================================
