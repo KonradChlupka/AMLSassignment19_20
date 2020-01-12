@@ -1,7 +1,7 @@
 from A1.a1 import A1
 from A2.a2 import A2
 from B1.b1 import B1
-from B2.B2 import B2
+from B2.b2 import B2
 
 # ======================================================================================
 # Data preprocessing - everything happens in files a1.py, a2.py, etc.
