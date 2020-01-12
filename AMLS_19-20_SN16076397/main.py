@@ -1,4 +1,7 @@
 from A1.a1 import A1
+from A2.a2 import A2
+from B1.b1 import B1
+from B2.B2 import B2
 
 # ======================================================================================
 # Data preprocessing - everything happens in files a1.py, a2.py, etc.
@@ -11,6 +14,7 @@ from A1.a1 import A1
 model_A1 = A1()
 acc_A1_train = model_A1.train()
 acc_A1_test = model_A1.test()
+del model_A1
 
 
 # ======================================================================================
@@ -51,5 +55,3 @@ print(
         acc_B2_test,
     )
 )
-
-
