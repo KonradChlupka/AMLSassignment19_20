@@ -40,11 +40,13 @@ Running "tree --filelimit 20" from the location of this README.md, we get the fo
 ```
 
 ### Packages required:
-```cv2
+```
+cv2
 dlib
 matplotlib
 numpy
 os
 random
 sklearn
-tensorflow```
+tensorflow
+```
