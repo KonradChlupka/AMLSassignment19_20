@@ -1,3 +1,5 @@
+import gc
+
 from A1.a1 import A1
 from A2.a2 import A2
 from B1.b1 import B1
@@ -17,6 +19,7 @@ model_A1 = A1()
 acc_A1_train = model_A1.train()
 acc_A1_test = model_A1.test()
 del model_A1
+gc.collect()
 
 
 # ======================================================================================
@@ -26,6 +29,7 @@ model_A2 = A2()
 acc_A2_train = model_A2.train()
 acc_A2_test = model_A2.test()
 del model_A2
+gc.collect()
 
 
 # ======================================================================================
@@ -35,6 +39,7 @@ model_B1 = B1()
 acc_B1_train = model_B1.train()
 acc_B1_test = model_B1.test()
 del model_B1
+gc.collect()
 
 
 # ======================================================================================
@@ -44,6 +49,7 @@ model_B2 = B2()
 acc_B2_train = model_B2.train()
 acc_B2_test = model_B2.test()
 del model_B2
+gc.collect()
 
 
 # ======================================================================================
