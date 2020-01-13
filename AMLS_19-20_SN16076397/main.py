@@ -3,6 +3,8 @@ from A2.a2 import A2
 from B1.b1 import B1
 from B2.b2 import B2
 
+print("Note: this file must be run the current directory set as the directory containing this file.")
+
 # ======================================================================================
 # Data preprocessing - everything happens in files a1.py, a2.py, etc.
 
