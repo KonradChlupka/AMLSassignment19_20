@@ -1,5 +1,7 @@
 # README
 
+### Please note that even though there are separate files for each task (a1, a2, b1, b2), the main file is main_jupyter.ipynb, and only this file contains the extensive data and model exploration.
+
 ### Project structure
 Running "tree --filelimit 20" from the location of this README.md, we get the following structure.
 
@@ -36,3 +38,13 @@ Running "tree --filelimit 20" from the location of this README.md, we get the fo
 
 17 directories, 19 files
 ```
+
+### Packages required:
+```cv2
+dlib
+matplotlib
+numpy
+os
+random
+sklearn
+tensorflow```
