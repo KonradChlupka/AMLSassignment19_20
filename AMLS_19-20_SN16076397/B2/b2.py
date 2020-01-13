@@ -12,14 +12,14 @@ class B2:
         X_test_uncropped, self.y_test = common.load_images_and_labels("cartoon_set_test", "eye_color")
 
         # crop the data to include the face only
-        self.X_train = X_train_uncropped
-        self.X_test = X_test_uncropped
+        self.X_train = tf.image.crop_to_bounding_box(X_train_uncropped, 250, 180, 30, 140)
+        self.X_test = tf.image.crop_to_bounding_box(X_test_uncropped, 250, 180, 30, 140)
 
         # create CNN
         self.model = tf.keras.models.Sequential()
         self.model.add(
             tf.keras.layers.Conv2D(
-                32, (3, 3), activation="relu", input_shape=(500, 500, 3)
+                32, (3, 3), activation="relu", input_shape=(30, 140, 3)
             )
         )
         self.model.add(tf.keras.layers.MaxPooling2D((2, 2)))
