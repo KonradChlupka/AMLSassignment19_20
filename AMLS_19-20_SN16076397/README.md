@@ -30,7 +30,7 @@ Running "tree --filelimit 20" from the location of this README.md, we get the fo
 │   ├── README.md -> The file you're reading now.
 │   ├── common.py -> Contains functions used across a1.py, a2.py, b1,py, b2.py.
 │   ├── main.py -> Runs a1.py, a2.py, b1,py, b2.py, prints results.
-│   ├── main_jupyter.ipynb -> *The main file in which extensive data and model exploration are made.*
+│   ├── main_jupyter.ipynb -> The main file in which extensive data and model exploration are made.
 │   └── shape_predictor_68_face_landmarks.dat -> Used by dlib.
 └── README.md -> The file you're reading now.
 
